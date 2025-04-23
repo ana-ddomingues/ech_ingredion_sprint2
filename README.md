@@ -6,23 +6,26 @@
 
 <br>
 
-# Nome do projeto
+# 🌱 Projeto de Previsão de Produtividade Agrícola com Machine Learning
+
+## Nome do projeto
+Fase 6 - Enterprise Challenge - Sprint 2 - Ingredion
 
 ## Nome do grupo
+Grupo 37
 
 ## 👨‍🎓 Integrantes: 
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 1</a>
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 2</a>
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 3</a> 
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 4</a> 
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 5</a>
+- [Ana Beatriz Duarte Domingues](https://www.linkedin.com/in/)
+- [Junior Rodrigues da Silva](https://www.linkedin.com/in/jrsilva051/)
+- [Carlos Emilio Castillo Estrada](https://www.linkedin.com/in/)
 
 ## 👩‍🏫 Professores:
-### Tutor(a) 
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do Tutor</a>
+### Tutor(a)
+- [Lucas Gomes Moreira](https://www.linkedin.com/company/inova-fusca)
 ### Coordenador(a)
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do Coordenador</a>
+- [André Godoi Chiovato](https://www.linkedin.com/company/inova-fusca)
 
+---
 
 ## 📜 Descrição
 
@@ -51,6 +54,10 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
 *Acrescentar as informações necessárias sobre pré-requisitos (IDEs, serviços, bibliotecas etc.) e instalação básica do projeto, descrevendo eventuais versões utilizadas. Colocar um passo a passo de como o leitor pode baixar o seu código e executá-lo a partir de sua máquina ou seu repositório. Considere a explicação organizada em fase.*
 
+
+### 🎥 Vídeo Demonstrativo
+- O vídeo demonstrativo da entrega 1 do projeto está disponível no YouTube:
+[Assista aqui]() 
 
 ## 🗃 Histórico de lançamentos
 
