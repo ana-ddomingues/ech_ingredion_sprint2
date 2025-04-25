@@ -39,11 +39,12 @@ Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
 
 - <b>document</b>: aqui estão todos os documentos do projeto que as atividades poderão pedir. Na subpasta "other", adicione documentos complementares e menos importantes.
 
-- <b>scripts</b>: Posicione aqui scripts auxiliares para tarefas específicas do seu projeto. Exemplo: deploy, migrações de banco de dados, backups.
+- <b>scripts</b>: Posicione aqui scripts auxiliares para tarefas específicas do seu projeto. 
 
-- <b>src</b>: Todo o código fonte criado para o desenvolvimento do projeto ao longo das 7 fases.
+- <b>src</b>: Todo o código fonte criado para o desenvolvimento do projeto.
 
-- <b>README.md</b>: arquivo que serve como guia e explicação geral sobre o projeto (o mesmo que você está lendo agora).
+- <b>README.md</b>: arquivo que serve como guia e explicação geral sobre o projeto.
+
 
 
 ## 📜 Descrição
@@ -182,7 +183,7 @@ python scripts/pre_processamento.py
 
 # Treinar o modelo
 python scripts/treina_modelo.py
-
+```
 
 ## 📚 Histórico de Lançamentos
 
