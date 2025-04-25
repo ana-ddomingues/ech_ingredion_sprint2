@@ -60,8 +60,8 @@ Os dados utilizados contemplam indicadores de **área plantada**, **produtividad
 | `REGIAO` | Região do Brasil |
 | `UF` | Estado |
 | `CULTURA` | Soja ou Milho |
-| `AREA_PERIODO_23_24` | Área plantada em mil ha (2023–2024) |
-| `AREA_PERIODO_24_25` | Área plantada em mil ha (2024–2025) |
+| `AREA_PERIODO_23_24` | Área plantada em mil hectares (2023–2024) |
+| `AREA_PERIODO_24_25` | Área plantada em mil hectares (2024–2025) |
 | `AREA_VAR` | Variação percentual da área plantada |
 | `PRODU_SAFRA_23_24` | Produtividade em kg/ha (2023–2024) |
 | `PRODU_SAFRA_24_25` | Produtividade em kg/ha (2024–2025) |
