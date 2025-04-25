@@ -83,7 +83,7 @@ O processo de preparação dos dados incluiu:
 ### Soja:
 A análise visual sugere um aumento na produtividade da soja em 2024–2025, com mais áreas na faixa de 3500–4000 kg/ha.
 
-![Distribuição da produtividade da soja](imagens/exploratoria/hist_soja.png)
+![Distribuição da produtividade da soja](assets/hist_soja.png)
 > *Figura 1 – Distribuição da produtividade da soja nos períodos 2023–2024 e 2024–2025.*
 
 Apesar do aumento geral, houve persistência de regiões com baixa produtividade (< 500 kg/ha), indicando possíveis fatores limitantes como solo ou clima.
@@ -91,7 +91,7 @@ Apesar do aumento geral, houve persistência de regiões com baixa produtividade
 ### Milho:
 No milho, observou-se maior dispersão nos dados de 2024–2025, com presença de produtividades tanto mais baixas quanto mais altas.
 
-![Distribuição da produtividade do milho](imagens/exploratoria/hist_milho.png)
+![Distribuição da produtividade do milho](assets/hist_milho.png)
 > *Figura 2 – Distribuição da produtividade do milho nos períodos 2023–2024 e 2024–2025.*
 
 A faixa principal de 4500–6000 kg/ha permaneceu, mas surgiram extremos que indicam variabilidade climática ou de manejo.
