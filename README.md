@@ -76,7 +76,7 @@ O processo de preparação dos dados incluiu:
 - Normalização de variáveis contínuas
 - Separação por cultura e período
 
-![Análise estatística dos dados](assets/analise_estat.png)
+<img src="assets/analise_estat.png" alt="Análise Estatística dos Dados" width="500px">
 > *Figura 1 – Análise estatística dos dados.*
 
 ---
@@ -86,7 +86,7 @@ O processo de preparação dos dados incluiu:
 ### Soja:
 A análise visual sugere um aumento na produtividade da soja em 2024–2025, com mais áreas na faixa de 3500–4000 kg/ha.
 
-![Distribuição da produtividade da soja](assets/hist_soja.png)
+<img src="assets/hist_soja.png" alt="Distribuição da produtividade da soja" width="500px">
 > *Figura 2 – Distribuição da produtividade da soja nos períodos 2023–2024 e 2024–2025.*
 
 Apesar do aumento geral, houve persistência de regiões com baixa produtividade (< 500 kg/ha), indicando possíveis fatores limitantes como solo ou clima.
@@ -94,7 +94,7 @@ Apesar do aumento geral, houve persistência de regiões com baixa produtividade
 ### Milho:
 No milho, observou-se maior dispersão nos dados de 2024–2025, com presença de produtividades tanto mais baixas quanto mais altas.
 
-![Distribuição da produtividade do milho](assets/hist_milho.png)
+<img src="assets/hist_milho.png" alt="Distribuição da produtividade do milho" width="500px">
 > *Figura 3 – Distribuição da produtividade do milho nos períodos 2023–2024 e 2024–2025.*
 
 A faixa principal de 4500–6000 kg/ha permaneceu, mas surgiram extremos que indicam variabilidade climática ou de manejo.
@@ -116,14 +116,14 @@ Testamos três abordagens:
 | Random Forest       | Boa generalização, robusto contra overfitting| Requer mais processamento                   |
 | Gradient Boosting   | Alta precisão em treino e teste              | Risco de overfitting                        |
 
-![Avaliação do desempenho dos modelos usando Mean Squared Error (MSE) e o R-squared (R²)](assets/avaliacao_modelos.png)
+<img src="assets/avaliacao_modelos.png" alt="Avalição do Desempenho dos Modelos usando Mean Squared Error e o R-squared" width="500px">
 > *Figura 4 – Avaliação do desempenho dos modelos usando Mean Squared Error (MSE) e o R-squared (R²).*
 
 ### 🔧 Ajuste de Hiperparâmetros e Otimização do Desempenho
 - Random Forest: `n_estimators=100`, `max_depth=None`
 - Técnicas utilizadas: `GridSearchCV` e `RandomizedSearchCV`.
 
-![Otimização de Hiperparâmetros](assets/hiperparametros.png)
+<img src="assets/hiperparametros.png" alt="Otimização de Hiperparâmetros" width="500px">
 > *Figura 5 – Otimização de Hiperparâmetros*
 
 Os resultados da otimização de hiperparâmetros para o modelo Random Forest para soja são muito bons. Um R² de 0,95 sugere que o modelo é capaz de explicar grande parte da variabilidade na produtividade da soja, e o MSE de aproximadamente 126533,84 indica que os erros de previsão, em média, não são excessivamente grandes no contexto da escala de produtividade (que provavelmente varia em milhares de kg/ha).
@@ -131,7 +131,63 @@ Os melhores hiperparâmetros encontrados sugerem que, para a soja, um modelo Ran
 
 ---
 
-## 📈 5. Avaliação e Resultados
+## 📋 3. Avaliação Detalhada e Ajustes da Modelagem
+
+### 3.1 Modelo de Regressão Linear Simples
+
+Inicialmente, foi construído um modelo de regressão linear simples para prever a produção de 2024/2025 com base na produção de 2023/2024.
+
+🔎 Observações do gráfico:
+- O gráfico mostra uma forte correlação positiva entre a produção real e a produção predita.
+- Os pontos estão relativamente próximos de uma linha reta imaginária, indicando que o modelo consegue prever a produção com boa precisão na maioria dos casos.
+- O R² de 0.90 sugere que o modelo explica 90% da variabilidade na produção real.
+- Apesar de alguns desvios, o modelo apresenta um bom ajuste aos dados.
+
+<img src="assets/regressao_simples.png" alt="Gráfico Regressão Linear Simples" width="500px">
+> *Figura 6 – Previsão de produção 24/25 com base em 23/24 – Regressão Linear Simples.*
+
+---
+
+### 3.2 Teste com Diferentes Divisões de Dados (Simulado)
+
+Como o conjunto de dados possui apenas dois períodos de tempo, simulamos diferentes divisões de dados para teste, variando a separação de treino e teste.
+
+🔎 Observações do gráfico:
+- A correlação entre a produção real e a prevista tornou-se fraca.
+- Os pontos ficaram bastante dispersos.
+- O R² caiu para 0.36, indicando que o modelo explica apenas 36% da variabilidade na produção real.
+- O ajuste aos dados foi ruim, com grande diferença entre valores reais e previstos.
+
+<img src="assets/teste_simulado.png" alt="Gráfico Simulação com Outra Divisão" width="500px">
+> *Figura 7 – Teste do modelo com outra divisão de dados.*
+
+---
+
+### 3.3 Ajuste da Estratégia de Modelagem (Adição de Novas Características)
+
+Buscando melhorar a precisão, adicionamos novas variáveis ao modelo, como:
+- Área cultivada
+- Produtividade do ano anterior
+
+🔎 Observações dos resultados e gráfico:
+- Mesmo com mais características, o modelo avançado apresentou desempenho fraco.
+- MSE e RMSE permaneceram altos.
+- O R² continuou baixo em 0.36.
+- O gráfico de resíduos mostrou grande dispersão, indicando erros significativos e imprecisão nas previsões.
+
+<img src="assets/ajuste_avancado.png" alt="Gráfico Ajuste Avançado" width="500px">
+> *Figura 8 – Resultados após adição de variáveis ao modelo.*
+
+<img src="assets/distr_residuos.png" alt="Gráfico Distribuição de Resíduos" width="500px">
+> *Figura 9 – Distribuição dos resíduos do modelo avançado.*
+
+---
+
+✅ Esses testes mostram que, embora o modelo inicial tivesse bom desempenho com divisão padrão, seu comportamento se deteriora com outras divisões e ajustes. Assim, é recomendado utilizar abordagens mais robustas (como Random Forest ou Gradient Boosting) para futuras previsões.
+
+---
+
+## 📈 4. Avaliação e Resultados
 
 ### Resultados – Soja
 
@@ -177,26 +233,19 @@ Para o milho, o Gradient Boosting foi o método mais preciso, seguido pelo Rando
 - O Gradient Boosting teve o menor erro (103784.57) e também explicou 97% da variação (R² de 0.97).
 Para a produção total do Brasil, tanto o Random Forest quanto o Gradient Boosting foram muito bons, explicando quase toda a variação nos dados. O Gradient Boosting teve um erro ligeiramente menor.
 
-
 ---
 
-## 📷 6. Prints e Gráficos
-
-Todas as imagens utilizadas neste README estão armazenadas em `imagens/exploratoria/`.
-
----
-
-## ▶️ 7. Demonstração em Vídeo
+## ▶️ 5. Demonstração em Vídeo
 
 🎥 [Clique aqui para assistir à demonstração no YouTube](LINK_DO_VIDEO_AQUI)
 
 ---
 
-## ⚙️ 8. Como Executar o Projeto
+## ⚙️ 6. Como Executar o Projeto
 
 ```bash
 # Instalar dependências
-pip install -r requirements.txt
+pip install -r config/requirements.txt
 
 # Executar o pré-processamento
 python scripts/pre_processamento.py
