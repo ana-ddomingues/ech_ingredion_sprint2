@@ -77,6 +77,7 @@ O processo de preparação dos dados incluiu:
 - Separação por cultura e período
 
 <img src="assets/analise_estat.png" alt="Análise Estatística dos Dados" width="500px">
+
 > *Figura 1 – Análise estatística dos dados.*
 
 ---
@@ -87,6 +88,7 @@ O processo de preparação dos dados incluiu:
 A análise visual sugere um aumento na produtividade da soja em 2024–2025, com mais áreas na faixa de 3500–4000 kg/ha.
 
 <img src="assets/hist_soja.png" alt="Distribuição da produtividade da soja" width="500px">
+
 > *Figura 2 – Distribuição da produtividade da soja nos períodos 2023–2024 e 2024–2025.*
 
 Apesar do aumento geral, houve persistência de regiões com baixa produtividade (< 500 kg/ha), indicando possíveis fatores limitantes como solo ou clima.
@@ -95,6 +97,7 @@ Apesar do aumento geral, houve persistência de regiões com baixa produtividade
 No milho, observou-se maior dispersão nos dados de 2024–2025, com presença de produtividades tanto mais baixas quanto mais altas.
 
 <img src="assets/hist_milho.png" alt="Distribuição da produtividade do milho" width="500px">
+
 > *Figura 3 – Distribuição da produtividade do milho nos períodos 2023–2024 e 2024–2025.*
 
 A faixa principal de 4500–6000 kg/ha permaneceu, mas surgiram extremos que indicam variabilidade climática ou de manejo.
@@ -117,6 +120,7 @@ Testamos três abordagens:
 | Gradient Boosting   | Alta precisão em treino e teste              | Risco de overfitting                        |
 
 <img src="assets/avaliacao_modelos.png" alt="Avalição do Desempenho dos Modelos usando Mean Squared Error e o R-squared" width="500px">
+
 > *Figura 4 – Avaliação do desempenho dos modelos usando Mean Squared Error (MSE) e o R-squared (R²).*
 
 ### 🔧 Ajuste de Hiperparâmetros e Otimização do Desempenho
@@ -124,6 +128,7 @@ Testamos três abordagens:
 - Técnicas utilizadas: `GridSearchCV` e `RandomizedSearchCV`.
 
 <img src="assets/hiperparametros.png" alt="Otimização de Hiperparâmetros" width="500px">
+
 > *Figura 5 – Otimização de Hiperparâmetros*
 
 Os resultados da otimização de hiperparâmetros para o modelo Random Forest para soja são muito bons. Um R² de 0,95 sugere que o modelo é capaz de explicar grande parte da variabilidade na produtividade da soja, e o MSE de aproximadamente 126533,84 indica que os erros de previsão, em média, não são excessivamente grandes no contexto da escala de produtividade (que provavelmente varia em milhares de kg/ha).
@@ -144,6 +149,7 @@ Inicialmente, foi construído um modelo de regressão linear simples para prever
 - Apesar de alguns desvios, o modelo apresenta um bom ajuste aos dados.
 
 <img src="assets/regressao_simples.png" alt="Gráfico Regressão Linear Simples" width="500px">
+
 > *Figura 6 – Previsão de produção 24/25 com base em 23/24 – Regressão Linear Simples.*
 
 ---
@@ -159,6 +165,7 @@ Como o conjunto de dados possui apenas dois períodos de tempo, simulamos difere
 - O ajuste aos dados foi ruim, com grande diferença entre valores reais e previstos.
 
 <img src="assets/teste_simulado.png" alt="Gráfico Simulação com Outra Divisão" width="500px">
+
 > *Figura 7 – Teste do modelo com outra divisão de dados.*
 
 ---
@@ -176,11 +183,13 @@ Buscando melhorar a precisão, adicionamos novas variáveis ao modelo, como:
 - O gráfico de resíduos mostrou grande dispersão, indicando erros significativos e imprecisão nas previsões.
 
 <img src="assets/ajuste_avancado.png" alt="Gráfico Ajuste Avançado" width="500px">
+
 > *Figura 8 – Resultados após adição de variáveis ao modelo.*
 
-<img src="assets/distr_residuos.png" alt="Gráfico Distribuição de Resíduos" width="500px">
-> *Figura 9 – Distribuição dos resíduos do modelo avançado.*
+<img src="assets/dist_residuos.png" alt="Gráfico Distribuição de Resíduos" width="500px">
 
+>*Figura 9 – Distribuição dos resíduos do modelo avançado.*
+ 
 ---
 
 ✅ Esses testes mostram que, embora o modelo inicial tivesse bom desempenho com divisão padrão, seu comportamento se deteriora com outras divisões e ajustes. Assim, é recomendado utilizar abordagens mais robustas (como Random Forest ou Gradient Boosting) para futuras previsões.
