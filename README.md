@@ -246,7 +246,7 @@ Para a produção total do Brasil, tanto o Random Forest quanto o Gradient Boost
 
 ## ▶️ 5. Demonstração em Vídeo
 
-🎥 [Clique aqui para assistir à demonstração no YouTube](LINK_DO_VIDEO_AQUI)
+🎥 [Clique aqui para assistir à demonstração no YouTube](https://youtu.be/KSfXhDJwzbc)
 
 ---
 
