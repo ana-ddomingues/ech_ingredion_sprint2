@@ -242,19 +242,6 @@ Para a produção total do Brasil, tanto o Random Forest quanto o Gradient Boost
 
 ---
 
-## ⚙️ 6. Como Executar o Projeto
-
-```bash
-# Instalar dependências
-pip install -r config/requirements.txt
-
-# Executar o pré-processamento
-python scripts/pre_processamento.py
-
-# Treinar o modelo
-python scripts/treina_modelo.py
-```
-
 ## 📚 Histórico de Lançamentos
 
 * 0.1.0 - 24/04/2025
